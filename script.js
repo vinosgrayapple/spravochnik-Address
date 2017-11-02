@@ -3,8 +3,10 @@ let search = document.querySelector('#search');
 
 users = [
     {
-        name: "Олег Александрович Качур",
-        email: "o.kachur@artwinery.com.ua"
+        name: "Олег Качур",
+        email: "o.kachur@artwinery.com.ua",
+        position: "Директор*",
+        img: "/images/avatar/large/steve.jpg"
     },
     {
         name: "Федя",
@@ -76,14 +78,17 @@ search.addEventListener('keyup', () => {
     }).reduce((a,b) =>  {
         return a + 
         `
-        <div class="ui card">
-        <a class="image" href="#">
-          <img src="/images/avatar/large/steve.jpg">
-        </a>
+        <div class="card">
         <div class="content">
-          <a class="header" href="#">${b.name}</a>
+          <img class="right floated mini ui image" src=${b.img||"/images/avatar/large/man.png"}>
+          <div class="header">
+          ${b.name}
+          </div>
           <div class="meta">
-            <a href="mailto:${b.email}">${b.email}</a>
+          ${b.position}
+          </div>
+          <div class="description">
+          <a href="mailto:${b.email}">${b.email}</a>
           </div>
         </div>
       </div>
@@ -97,14 +102,17 @@ search.addEventListener('keyup', () => {
 const inHTML = users.reduce((a,b) => {
     return a + 
     `
-    <div class="ui card">
-    <a class="image" href="#">
-      <img src="/images/avatar/large/man.png">
-    </a>
+    <div class="card">
     <div class="content">
-      <a class="header" href="#">${b.name}</a>
+      <img class="right floated mini ui image" src=${b.img||"/images/avatar/large/man.png"}>
+      <div class="header">
+      ${b.name}
+      </div>
       <div class="meta">
-        <a>${b.email}</a>
+      ${b.position}
+      </div>
+      <div class="description">
+      <a href="mailto:${b.email}">${b.email}</a>
       </div>
     </div>
   </div>
