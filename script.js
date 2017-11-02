@@ -80,7 +80,7 @@ search.addEventListener('keyup', () => {
         `
         <div class="card">
         <div class="content">
-          <img class="right floated mini ui image" src=${b.img||"/images/avatar/large/man.png"}>
+          <img class="right floated mini ui image" src=${b.img||"images/avatar/large/man.png"}>
           <div class="header">
           ${b.name}
           </div>
@@ -104,7 +104,7 @@ const inHTML = users.reduce((a,b) => {
     `
     <div class="card">
     <div class="content">
-      <img class="right floated mini ui image" src=${b.img||"/images/avatar/large/man.png"}>
+      <img class="right floated mini ui image" src=${b.img||"images/avatar/large/man.png"}>
       <div class="header">
       ${b.name}
       </div>
