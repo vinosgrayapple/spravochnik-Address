@@ -6,7 +6,7 @@ users = [
         name: "Олег Качур",
         email: "o.kachur@artwinery.com.ua",
         position: "Директор*",
-        img: "/images/avatar/large/steve.jpg"
+        img: "images/avatar/large/steve.jpg"
     },
     {
         name: "Федя",
