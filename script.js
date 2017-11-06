@@ -67,7 +67,7 @@ users = [
     }
 ];
 units.forEach(unit => unit.addEventListener('click',() => {
-    this.querySelector('i').classList.toggle('checkmark');
+    unit.querySelector('i').classList.toggle('checkmark');
 }));
 search.addEventListener('keyup', () => {
     // console.log('hi');
