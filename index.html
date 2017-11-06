@@ -15,12 +15,36 @@
     <title>Справочник адресов корпоративной электронной почты</title>
 </head>
 <body>
-<header>
-    <div class="block_search ui input">
-        <input type="text" placeholder="Поиск..." id="search">
+       
+<div class="ui container center aligned grid" >
+    <div class="ui input block_search ">
+    <input type="text" placeholder="Поиск..." id="search" data-content="Поиск по базе работников ЧАО Артвайнери" >
     </div>
-</header>
-  <section>
+</div>
+
+<div class="ui container units">
+            <div></div>
+            <div class="ui compact grey segment">
+                    <p>    
+                        <i class="box green icon"></i>
+                        Производственные
+                    </p>
+            </div>
+            <div class="ui compact grey segment">
+                    <p>Вспомогательные</p>
+            </div>
+            <div class="ui compact grey segment">
+                    <p>Административные</p>
+            </div>
+            <div class="ui compact grey segment">
+                    <p>Сбытовые</p>
+            </div>
+            <div class="ui compact grey segment">
+                    <p>Прочие</p>
+            </div>
+       
+       
+</div>
       <div id="tmpl" class="ui container"></div>
   </section>
 <script src="script.js"></script>

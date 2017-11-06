@@ -1,14 +1,23 @@
-*
-{
+* {
     padding: 0;
     margin: 0;
 }
-body
-{
+.tomborder {
+    border: 1px solid tomato;
+}
+body {
     font-family:Calibri, sans-serif;
     font-size: 16px;
 }
-section {
+.units {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.ui.compact.grey.segment {
+    cursor: pointer;
+}
+/* section {
     margin: 20px auto;
 }
 header {
@@ -20,14 +29,15 @@ header {
     flex-direction: row;
 }
 #search {
-    /* margin: auto; */
-    padding: 5px;
-    /* width: inherit; */
+     margin: auto; 
+     padding: 5px; 
+     width: inherit; 
     
     
-}
+} */
+
 .block_search {
-    margin: auto;
+    margin: 30px auto;
 }
 /* #tmpl {
     display: flex;
@@ -77,7 +87,7 @@ header {
     font-size: 1em;
     color: rgba(0,0,0,.4);
 }
-.card>.content {
+.card > .content {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;

@@ -1,11 +1,12 @@
 let template = document.querySelector('#tmpl');
 let search = document.querySelector('#search');
-
+let units = document.querySelectorAll('.ui.compact.segment');
 users = [
     {
         name: "Олег Качур",
         email: "o.kachur@artwinery.com.ua",
-        position: "Директор*",
+        position: "Директор",
+        unit: "админ. подразделение",
         img: "images/avatar/large/steve.jpg"
     },
     {
@@ -65,6 +66,9 @@ users = [
         email: "kolya@gmail.com"
     }
 ];
+units.forEach(unit => unit.addEventListener('click',() => {
+    this.querySelector('i').classList.toggle('checkmark');
+}));
 search.addEventListener('keyup', () => {
     // console.log('hi');
     // console.log('<li class="">' + b.name + '<br>' +'<a href="mailto:'+ b.email + '">' + b.email + '</a>' +'</li>')
@@ -85,7 +89,10 @@ search.addEventListener('keyup', () => {
           ${b.name}
           </div>
           <div class="meta">
-          ${b.position}
+          ${b.position || "&nbsp;"}
+          </div>
+          <div class="meta">
+          ${b.unit ||"&nbsp;"}
           </div>
           <div class="description">
           <a href="mailto:${b.email}">${b.email}</a>
@@ -109,7 +116,10 @@ const inHTML = users.reduce((a,b) => {
       ${b.name}
       </div>
       <div class="meta">
-      ${b.position}
+      ${b.position || "&nbsp;"}
+      </div>
+      <div class="meta">
+      ${b.unit || "&nbsp;"}
       </div>
       <div class="description">
       <a href="mailto:${b.email}">${b.email}</a>
