@@ -9,14 +9,25 @@ body {
     font-family:Calibri, sans-serif;
     font-size: 16px;
 }
-.units {
+.units, #tmpl {
     display: flex !important;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.ui.compact.grey.segment {
-    cursor: pointer;
+.units :first-child {
+   
 }
+.ui.compact {
+    min-width: 140px !important;
+}
+.ui.compact.segment {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
+   
+}
+
 /* section {
     margin: 20px auto;
 }
