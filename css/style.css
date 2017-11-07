@@ -14,8 +14,17 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.units :first-child {
-   
+.text.orange {
+    color: #E07B53;
+  }
+.text.purple {
+    color: #564F8A;
+}
+.text.green {
+    color: darkolivegreen;
+}
+.text.darkred {
+    color: darkred;
 }
 .ui.compact {
     min-width: 140px !important;

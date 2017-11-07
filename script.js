@@ -53,7 +53,7 @@ const printUsers = (arr) => {
     .transition({
       animation : 'slide down',
       reverse   : 'auto', 
-      interval  : 150
+      interval  : 50
     })
   ;
 };
