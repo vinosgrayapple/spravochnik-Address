@@ -28,7 +28,13 @@ const unitsClear = () => {
 const printUsers = (arr) => {
     
     template.innerHTML =  arr.reduce((a,b) =>  {
-        sexImg = b.gender === "woman" ? "images/avatar/large/woman.png" : "images/avatar/large/man.png";
+        const sexImg = b.gender === "woman" ? "images/avatar/large/woman.png" : "images/avatar/large/man.png";
+        const iconCall = (text) => {
+           if (b.internalPhone)
+                return text;
+                return '';
+        }
+        
             return a + 
     `
         <div class="card transition hidden" style="display: inline-block !important;">
@@ -41,13 +47,20 @@ const printUsers = (arr) => {
                 <div class="meta">
                     ${b.position || "&nbsp;"}
                 </div>
+
                     <div class="description">
+                    <a class="ui ${iconCall('label')}">
+                    <i  class="call ${iconCall('icon')}"></i>
+                    ${b.internalPhone  || "&nbsp;"}
+                  </a>
+                    <br>
                     <a href="mailto:${b.email}">${b.email}</a>
                     </div>
             </div>
         </div>
     `
     },'');
+    // <i class="call ${iconCall()}">${b.internalPhone  || "&nbsp;"}</i>
     $('.card')
     // .transition('horizontal flip', '500ms');
     .transition({
@@ -66,6 +79,7 @@ users = [
     {
         name: "Олег Качур",
         email: "o.kachur@artwinery.com.ua",
+        internalPhone: "5-65",
         position: "Директор",
         unit: "Административные",
         department:"",
@@ -76,6 +90,7 @@ users = [
     {
         name: "Игорь Толкачев",
         email: "igor.tolkachov@artwinery.com.ua",
+        internalPhone: "",
         position: "Директор",
         unit: "Административные",
         department:"",
@@ -86,6 +101,7 @@ users = [
     {
         name: "Виктория Малеваная",
         email: "v.malovana@artwinery.com.ua",
+        internalPhone: "",
         position: "Директор",
         unit: "Административные",
         department:"",
@@ -95,6 +111,7 @@ users = [
     },{
         name: "Денис Ермаков",
         email: "d.yermakov@artwinery.com.ua",
+        internalPhone: "",
         position: "Начальник отдела ОМТСиТЛ",
         unit: "Вспомогательные",
         department:"ОМТСиТЛ",
@@ -103,8 +120,15 @@ users = [
         birthday: ""
     },
     {
-        name: "коля",
-        email: "kolya@gmail.com"
+        name: "Максим Герасименко",
+        email: "m.gerasimenko@artwinery.com.ua",
+        internalPhone: "",
+        position: "Начальник отдела продаж",
+        unit: "Сбытовые",
+        department:"",
+        gender: "man",
+        img: "",
+        birthday: ""
     },
     {
         name: "Вася",
