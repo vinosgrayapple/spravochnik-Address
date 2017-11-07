@@ -101,7 +101,7 @@ users = [
     {
         name: "Виктория Малеваная",
         email: "v.malovana@artwinery.com.ua",
-        internalPhone: "",
+        internalPhone: "🔥5-66",
         position: "Директор",
         unit: "Административные",
         department:"",
