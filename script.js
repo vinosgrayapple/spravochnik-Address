@@ -68,6 +68,7 @@ users = [
         email: "o.kachur@artwinery.com.ua",
         position: "Директор",
         unit: "Административные",
+        department:"",
         gender: "man",
         img: "images/avatar/large/kachur.jpg",
         birthday: "01.04.1983"
@@ -77,6 +78,7 @@ users = [
         email: "igor.tolkachov@artwinery.com.ua",
         position: "Директор",
         unit: "Административные",
+        department:"",
         gender: "man",
         img: "images/avatar/large/steve.jpg",
         birthday: "15.01.1971"
@@ -86,12 +88,19 @@ users = [
         email: "v.malovana@artwinery.com.ua",
         position: "Директор",
         unit: "Административные",
+        department:"",
         gender: "woman",
         img: "",
         birthday: ""
     },{
-        name: "Вася",
-        email: "kolya@gmail.com"
+        name: "Денис Ермаков",
+        email: "d.yermakov@artwinery.com.ua",
+        position: "Начальник отдела ОМТСиТЛ",
+        unit: "Вспомогательные",
+        department:"ОМТСиТЛ",
+        gender: "man",
+        img: "",
+        birthday: ""
     },
     {
         name: "коля",
