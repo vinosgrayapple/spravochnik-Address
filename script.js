@@ -95,7 +95,7 @@ users = [
         unit: "Административные",
         department:"",
         gender: "man",
-        img: "images/avatar/large/steve.jpg",
+        img: "images/avatar/large/tolkachev.jpg",
         birthday: "15.01.1971"
     },
     {
@@ -127,12 +127,19 @@ users = [
         unit: "Сбытовые",
         department:"",
         gender: "man",
-        img: "",
+        img: "images/avatar/large/gerasimenko.jpg",
         birthday: ""
     },
     {
-        name: "Вася",
-        email: "kolya@gmail.com"
+        name: "Сергей   Комаричев",
+        email: "komarichev@artwinery.com.ua",
+        internalPhone: "6-33",
+        position: "Аналитик товарного рынка",
+        unit: "Сбытовые",
+        department:"",
+        gender: "man",
+        img: "images/avatar/large/komarichev.jpg",
+        birthday: "04.10.1979"
     },
     {
         name: "Вася",
