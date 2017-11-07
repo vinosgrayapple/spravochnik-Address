@@ -26,13 +26,15 @@ const unitsClear = () => {
     });
 };
 const printUsers = (arr) => {
+    
     template.innerHTML =  arr.reduce((a,b) =>  {
+        sexImg = b.gender === "woman" ? "images/avatar/large/woman.png" : "images/avatar/large/man.png";
             return a + 
     `
         <div class="card">
             <div class="content">
                 <a class="ui image big label">
-                <img src=${b.img || "images/avatar/large/man.png"}>
+                <img src=${b.img || sexImg}>
                 ${b.name}
                 </a>
                 
@@ -57,7 +59,7 @@ users = [
         email: "o.kachur@artwinery.com.ua",
         position: "Директор",
         unit: "Административные",
-        sex: "man",
+        gender: "man",
         img: "images/avatar/large/kachur.jpg",
         birthday: "01.04.1983"
     },
@@ -66,7 +68,7 @@ users = [
         email: "igor.tolkachov@artwinery.com.ua",
         position: "Директор",
         unit: "Административные",
-        sex: "man",
+        gender: "man",
         img: "images/avatar/large/steve.jpg",
         birthday: "15.01.1971"
     },
@@ -75,7 +77,7 @@ users = [
         email: "v.malovana@artwinery.com.ua",
         position: "Директор",
         unit: "Административные",
-        sex: "woman",
+        gender: "woman",
         img: "",
         birthday: ""
     },{
