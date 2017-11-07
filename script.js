@@ -31,7 +31,7 @@ const printUsers = (arr) => {
         sexImg = b.gender === "woman" ? "images/avatar/large/woman.png" : "images/avatar/large/man.png";
             return a + 
     `
-        <div class="card">
+        <div class="card transition hidden" style="display: inline-block !important;">
             <div class="content">
                 <a class="ui image big label">
                 <img src=${b.img || sexImg}>
@@ -42,13 +42,22 @@ const printUsers = (arr) => {
                     ${b.position || "&nbsp;"}
                 </div>
                     <div class="description">
-                        <a href="mailto:${b.email}">${b.email}</a>
+                    <a href="mailto:${b.email}">${b.email}</a>
                     </div>
             </div>
         </div>
     `
     },'');
+    $('.card')
+    // .transition('horizontal flip', '500ms');
+    .transition({
+      animation : 'slide down',
+      reverse   : 'auto', 
+      interval  : 150
+    })
+  ;
 };
+// <a href="mailto:${b.email}">${b.email}</a>
 const toggleClass = (context, delClass, addClass) => {
     context.classList.remove(delClass);
     context.classList.add(addClass)
