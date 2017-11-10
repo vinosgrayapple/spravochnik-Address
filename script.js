@@ -39,15 +39,21 @@ const printUsers = (arr) => {
            if (b.internalPhone)
                 return text;
                 return '';
-        }
-        
+        };
+       const imgId = b.email.replace(/[^a-z]/gi,'');
+       
+        // $( '.' + imgId ).tooltip({
+        //     delay: { "show": 500, "hide": 100 },
+        //     title:`<img src="${b.img || sexImg}">`,
+        //     html:true,
+        // }); 
             return a + 
     `
         <div class="card transition hidden" style="display: inline-block !important;">
             <div class="content">
             
            <a class="ui image big label clip">
-                <img src=${b.img || sexImg} >
+                <img src=${b.img || sexImg} class="${imgId}">
                 <span class="clip span_name" title="${b.name}">${cutText(b.name)}</span>
                 
                 </a>
@@ -126,7 +132,7 @@ users = [
         birthday: ""
     },
     {
-        name: "Максим Герасименко Максим Герасименко",
+        name: "Максим Герасименко",
         email: "m.gerasimenko@artwinery.com.ua",
         internalPhone: "",
         position: "Начальник отдела продаж",
@@ -243,7 +249,15 @@ document.querySelector('.units :first-child').style.paddingBottom = "11px";
 
 $(document)
 .ready(function() {
-
+users.forEach(user => {
+    const imgId = user.email.replace(/[^a-z]/gi,'');
+    console.log('.' + imgId );
+     $( '.' + imgId ).tooltip({
+         delay: { "show": 500, "hide": 100 },
+         title:`<img src="${user.img || ''}">`,
+         html:true,
+     }); 
+});
 //this works
     $('.fade-down')
     .transition('bounce')
