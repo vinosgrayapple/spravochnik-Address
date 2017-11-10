@@ -85,7 +85,7 @@ header {
     padding: 5px;
     display: inline-block;
     margin: 10px;
-     width: 290px;
+     width: 320px;
      min-height: 0;
      background: #fff;
      padding: 0;
@@ -101,7 +101,7 @@ header {
     line-height: 1.28571429em;
     display: block;
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-    color: rgba(0,0,0,.85);
+    color: rgba(24, 23, 23, 0.85);
  }
  .card .meta {
     font-size: 1em;
