@@ -120,3 +120,25 @@ header {
     font-size: 1em;
     border-radius: 0;
 }
+.b_name {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ui.image.big.label {
+width: 250px;
+}
+.ui.image.label {
+    width: 250px;
+}
+.span_name {
+    max-width: 100%;
+}
+.clip {
+    display: inline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* -ms-text-size-adjust: 80%; */
+    }

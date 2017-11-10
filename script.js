@@ -3,9 +3,15 @@ let search = document.querySelector('#search');
 let units = document.querySelectorAll('.ui.compact.segment');
 let searchClear = document.querySelector('.close.link.icon');
 
+const cutText = text => {
+    if (text.length > 20) {
+        return text.slice(0,18) + '...';
+    }
+    return text;
+};
 
 searchClear.addEventListener('click', () => {
-    search.value=""
+    search.value = '';
     printUsers(users);
 });
 
@@ -39,14 +45,14 @@ const printUsers = (arr) => {
     `
         <div class="card transition hidden" style="display: inline-block !important;">
             <div class="content">
-                <a class="ui image big label">
-                <img src=${b.img || sexImg}>
-                ${b.name}
-                </a>
+            
+           <a class="ui image big label clip">
+                <img src=${b.img || sexImg} >
+                <span class="clip span_name" title="${b.name}">${cutText(b.name)}</span>
                 
-                <div class="meta">
-                    ${b.position || "&nbsp;"}
-                </div>
+                </a>
+                <!-- <var class="published" title="${b.birthday}">${b.birthday}</var> -->
+        
 
                     <div class="description">
                     <a class="ui ${iconCall('label')}">
@@ -70,7 +76,7 @@ const printUsers = (arr) => {
     })
   ;
 };
-// <a href="mailto:${b.email}">${b.email}</a>
+
 const toggleClass = (context, delClass, addClass) => {
     context.classList.remove(delClass);
     context.classList.add(addClass)
@@ -120,7 +126,7 @@ users = [
         birthday: ""
     },
     {
-        name: "Максим Герасименко",
+        name: "Максим Герасименко Максим Герасименко",
         email: "m.gerasimenko@artwinery.com.ua",
         internalPhone: "",
         position: "Начальник отдела продаж",
@@ -203,14 +209,14 @@ units.forEach(unit_item => unit_item.addEventListener('click',() => {
     if (unit_ === "Показать все") {
         span.innerHTML = users.length;
         printUsers(users);
-        
+        search.value=""
         // toggleClass(unit_item, 'grey', 'green'); 
     } else {
         span.innerHTML = users.filter(user => user.unit ?  user.unit.includes(unit_) : false).length;
          printUsers(users.filter(user => user.unit ?  user.unit.includes(unit_) : false));
     }
     unit_item.appendChild(span);
-   
+    
 }));
 search.addEventListener('focus', () => {
     unitsClear();
@@ -233,3 +239,19 @@ printUsers(users);
 // mt
 document.querySelector('.units :first-child').style.marginTop = "14px";
 document.querySelector('.units :first-child').style.paddingBottom = "11px";
+
+
+$(document)
+.ready(function() {
+
+//this works
+    $('.fade-down')
+    .transition('bounce')
+  ;
+//this doesn't
+    var self = this;
+    $('.fade-down').hover( function() {
+    self.transition("bounce");
+    })
+})
+;
