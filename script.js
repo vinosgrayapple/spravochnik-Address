@@ -53,7 +53,7 @@ const printUsers = (arr) => {
                 </a>
                 <!-- <var class="published" title="${b.birthday}">${b.birthday}</var> -->
         
-
+                        <br>
                     <div class="description">
                     <a class="ui ${iconCall('label')}">
                     <i  class="call ${iconCall('icon')}"></i>
