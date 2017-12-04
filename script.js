@@ -10,10 +10,6 @@ const cutText = text => {
     return text;
 };
 
-searchClear.addEventListener('click', () => {
-    search.value = '';
-    printUsers(users);
-});
 
 const unitsClear = () => {
     units.forEach(item => {
@@ -87,185 +83,93 @@ const toggleClass = (context, delClass, addClass) => {
     context.classList.remove(delClass);
     context.classList.add(addClass)
 };
-users = [
-    {
-        name: "Олег Качур",
-        email: "o.kachur@artwinery.com.ua",
-        internalPhone: "5-65",
-        position: "Директор",
-        unit: "Административные",
-        department:"",
-        gender: "man",
-        img: "images/avatar/large/kachur.jpg",
-        birthday: "01.04.1983"
-    },
-    {
-        name: "Игорь Толкачев",
-        email: "igor.tolkachov@artwinery.com.ua",
-        internalPhone: "",
-        position: "Директор",
-        unit: "Административные",
-        department:"",
-        gender: "man",
-        img: "images/avatar/large/tolkachev.jpg",
-        birthday: "15.01.1971"
-    },
-    {
-        name: "Виктория Малеваная",
-        email: "v.malovana@artwinery.com.ua",
-        internalPhone: "🔥5-66",
-        position: "Директор",
-        unit: "Административные",
-        department:"",
-        gender: "woman",
-        img: "",
-        birthday: ""
-    },{
-        name: "Денис Ермаков",
-        email: "d.yermakov@artwinery.com.ua",
-        internalPhone: "",
-        position: "Начальник отдела ОМТСиТЛ",
-        unit: "Вспомогательные",
-        department:"ОМТСиТЛ",
-        gender: "man",
-        img: "",
-        birthday: ""
-    },
-    {
-        name: "Максим Герасименко",
-        email: "m.gerasimenko@artwinery.com.ua",
-        internalPhone: "",
-        position: "Начальник отдела продаж",
-        unit: "Сбытовые",
-        department:"",
-        gender: "man",
-        img: "images/avatar/large/gerasimenko.jpg",
-        birthday: ""
-    },
-    {
-        name: "Сергей   Комаричев",
-        email: "komarichev@artwinery.com.ua",
-        internalPhone: "6-33",
-        position: "Аналитик товарного рынка",
-        unit: "Сбытовые",
-        department:"",
-        gender: "man",
-        img: "images/avatar/large/komarichev.jpg",
-        birthday: "04.10.1979"
-    },
-    {
-        name: "Вася",
-        email: "kolya@gmail.com"
-    },{
-        name: "Вася",
-        email: "kolya@gmail.com"
-    },
-    {
-        name: "Вася",
-        email: "kolya@gmail.com"
-    },
-    {
-        name: "Вася",
-        email: "kolya@gmail.com"
-    },
-    {
-        name: "Вася",
-        email: "kolya@gmail.com"
-    },{
-        name: "Вася",
-        email: "kolya@gmail.com"
-    },
-    {
-        name: "Вася",
-        email: "kolya@gmail.com"
-    },
-    {
-        name: "Вася",
-        email: "kolya@gmail.com"
-    },
-    {
-        name: "Вася",
-        email: "kolya@gmail.com"
-    },{
-        name: "Вася",
-        email: "kolya@gmail.com"
-    }
-];
-units.forEach(unit => unit.onmousedown = unit.onselectstart = function() {
-    return false;
-});
-units.forEach(unit_item => unit_item.addEventListener('click',() => {
-    unitsClear();
-    toggleClass(unit_item, 'grey', 'green');
-    
-    search.blur();
-    let unit_ = unit_item.dataset.subunit;
-    
-    if (unit_item.querySelector('span').innerText !== "Административные") {
-        unit_item.style.paddingBottom = "0px";
-    } else {
-        unit_item.style.paddingBottom = "11px";
-    }
+fetch("users.json")
+  .then(response => {
+    console.log(response.headers.get("Content-Type")); // application/json; charset=utf-8
+    if (response.status) return response.json();
+  })
+  .then(users => {
+    units.forEach(unit => (unit.onmousedown = unit.onselectstart = function() {
+          return false;
+        }));
+    units.forEach(unit_item => unit_item.addEventListener("click", () => {
+        unitsClear();
+        toggleClass(unit_item, "grey", "green");
 
-    const span = document.createElement('span');
-    span.className = "floating ui purple label";
-    
-    
-    
-    if (unit_ === "Показать все") {
-        span.innerHTML = users.length;
-        printUsers(users);
-        search.value=""
-        // toggleClass(unit_item, 'grey', 'green'); 
-    } else {
-        span.innerHTML = users.filter(user => user.unit ?  user.unit.includes(unit_) : false).length;
-         printUsers(users.filter(user => user.unit ?  user.unit.includes(unit_) : false));
-    }
-    unit_item.appendChild(span);
-    
-}));
-search.addEventListener('focus', () => {
-    unitsClear();
-    units.forEach(unit=>{
-        toggleClass(unit,'green', 'grey');
+        search.blur();
+        let unit_ = unit_item.dataset.subunit;
+
+        if (unit_item.querySelector("span").innerText !== "Административные") {
+          unit_item.style.paddingBottom = "0px";
+        } else {
+          unit_item.style.paddingBottom = "11px";
+        }
+
+        const span = document.createElement("span");
+        span.className = "floating ui purple label";
+
+        if (unit_ === "Показать все") {
+          span.innerHTML = users.length;
+          printUsers(users);
+          search.value = "";
+          // toggleClass(unit_item, 'grey', 'green');
+        } else {
+          span.innerHTML = users.filter(user => (user.unit ? user.unit.includes(unit_) : false)).length;
+          printUsers(users.filter(user => (user.unit ? user.unit.includes(unit_) : false)));
+        }
+        unit_item.appendChild(span);
+      }));
+    search.addEventListener("focus", () => {
+      unitsClear();
+      units.forEach(unit => {
+        toggleClass(unit, "green", "grey");
+      });
+      printUsers(users);
     });
+    search.addEventListener("keyup", () => {
+      printUsers(users.filter(user => {
+          const name = user.name.toLowerCase();
+          const email = user.email.toLowerCase();
+          const searchVal = search.value.toLowerCase();
+          return name.includes(searchVal) || email.includes(searchVal);
+        }));
+    });
+    searchClear.addEventListener("click", () => {
+      search.value = "";
+      printUsers(users);
+    });
+
     printUsers(users);
-});
-search.addEventListener('keyup', () => {
-    printUsers(users.filter(user => 
-    {
-       const name = user.name.toLowerCase();
-       const email = user.email.toLowerCase();
-       const searchVal = search.value.toLowerCase(); 
-       return name.includes(searchVal) || email.includes(searchVal);
-    }));
-});
-printUsers(users);
+
+  })
+  .catch(alert);
+
+
 
 // mt
 document.querySelector('.units :first-child').style.marginTop = "14px";
 document.querySelector('.units :first-child').style.paddingBottom = "11px";
 
 
-$(document)
-.ready(function() {
-users.forEach(user => {
-    const imgId = user.email.replace(/[^a-z]/gi,'');
-    console.log('.' + imgId );
-     $( '.' + imgId ).tooltip({
-         delay: { "show": 500, "hide": 100 },
-         title:`<img src="${user.img || ''}">`,
-         html:true,
-     }); 
-});
-//this works
-    $('.fade-down')
-    .transition('bounce')
-  ;
-//this doesn't
-    var self = this;
-    $('.fade-down').hover( function() {
-    self.transition("bounce");
-    })
-})
-;
+// $(document)
+// .ready(function() {
+// users.forEach(user => {
+//     const imgId = user.email.replace(/[^a-z]/gi,'');
+//     console.log('.' + imgId );
+//      $( '.' + imgId ).tooltip({
+//          delay: { "show": 500, "hide": 100 },
+//          title:`<img src="${user.img || ''}">`,
+//          html:true,
+//      }); 
+// });
+// //this works
+//     $('.fade-down')
+//     .transition('bounce')
+//   ;
+// //this doesn't
+//     var self = this;
+//     $('.fade-down').hover( function() {
+//     self.transition("bounce");
+//     })
+// })
+// ;

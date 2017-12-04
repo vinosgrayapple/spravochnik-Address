@@ -1,0 +1,136 @@
+[
+  {
+    "name": "Олег Качур",
+    "email": "o.kachur@artwinery.com.ua",
+    "internalPhone": "5-65",
+    "position": "Директор",
+    "unit": "Административные",
+    "department": "",
+    "gender": "man",
+    "img": "images/avatar/large/kachur.jpg",
+    "birthday": "01.04.1983"
+  },
+  {
+    "name": "Игорь Толкачев",
+    "email": "igor.tolkachov@artwinery.com.ua",
+    "internalPhone": "",
+    "position": "Директор",
+    "unit": "Административные",
+    "department": "",
+    "gender": "man",
+    "img": "images/avatar/large/tolkachev.jpg",
+    "birthday": "15.01.1971"
+  },
+  {
+    "name": "Виктория Малеваная",
+    "email": "v.malovana@artwinery.com.ua",
+    "internalPhone": "🔥5-66",
+    "position": "Директор",
+    "unit": "Административные",
+    "department": "",
+    "gender": "woman",
+    "img": "",
+    "birthday": ""
+  },
+  {
+    "name": "Денис Ермаков",
+    "email": "d.yermakov@artwinery.com.ua",
+    "internalPhone": "",
+    "position": "Начальник отдела ОМТСиТЛ",
+    "unit": "Вспомогательные",
+    "department": "ОМТСиТЛ",
+    "gender": "man",
+    "img": "",
+    "birthday": ""
+  },
+  {
+    "name": "Максим Герасименко",
+    "email": "m.gerasimenko@artwinery.com.ua",
+    "internalPhone": "",
+    "position": "Начальник отдела продаж",
+    "unit": "Сбытовые",
+    "department": "",
+    "gender": "man",
+    "img": "images/avatar/large/gerasimenko.jpg",
+    "birthday": ""
+  },
+  {
+    "name": "Сергей   Комаричев",
+    "email": "komarichev@artwinery.com.ua",
+    "internalPhone": "6-33",
+    "position": "Аналитик товарного рынка",
+    "unit": "Сбытовые",
+    "department": "",
+    "gender": "man",
+    "img": "images/avatar/large/komarichev.jpg",
+    "birthday": "04.10.1979"
+  },
+  {
+    "name": "Александр Хирьянвов",
+    "email": "a.khiryanov@artwinery.com.ua",
+    "internalPhone": "",
+    "position": "",
+    "unit": "Вспомогательные",
+    "department": "ОМТСиТЛ",
+    "gender": "man",
+    "img": "",
+    "birthday": ""
+  },
+  {
+    "name": "Артём Девинский",
+    "email": "a.devinskiy@artwinery.com.ua",
+    "internalPhone": "",
+    "position": "",
+     "unit": "Вспомогательные",
+    "department": "ОМТСиТЛ",
+    "gender": "man",
+    "img": "",
+    "birthday": ""
+  },
+  {
+   "name": "Александр Лычак",
+    "email": "a.lychak@artwinery.com.ua",
+    "internalPhone": "",
+    "position": "",
+    "unit": "Вспомогательные",
+    "department": "ОМТСиТЛ",
+    "gender": "man",
+    "img": "",
+    "birthday": ""
+  },
+  {
+    "name": "Наталья Ковалева",
+    "email": "n.kovaleva@artwinery.com.ua",
+    "internalPhone": "",
+    "position": "",
+    "unit": "Вспомогательные",
+    "department": "ОМТСиТЛ",
+    "gender": "woman",
+    "img": "",
+    "birthday": ""
+  },
+  {
+    "name": "Вася",
+    "email": "kolya@gmail.com"
+  },
+  {
+    "name": "Вася",
+    "email": "kolya@gmail.com"
+  },
+  {
+    "name": "Вася",
+    "email": "kolya@gmail.com"
+  },
+  {
+    "name": "Вася",
+    "email": "kolya@gmail.com"
+  },
+  {
+    "name": "Вася",
+    "email": "kolya@gmail.com"
+  },
+  {
+    "name": "Вася",
+    "email": "kolya@gmail.com"
+  }
+]
